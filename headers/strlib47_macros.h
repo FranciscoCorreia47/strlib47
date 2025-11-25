@@ -1,8 +1,10 @@
 #ifndef STRLIB47_MACROS_H
 #define STRLIB47_MACROS_H
+#include "strlib47.h"
 
 /**
- * @file The header that contains all macros used accross the library
+ * @file strlib47_macros.h
+ * @brief The header that contains all macros used accross the library
  */
 
 /**

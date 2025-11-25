@@ -3,7 +3,8 @@
 #include "strlib47.h"
 
 /**
- * @file The header that contains string.h equivalent functions
+ * @file strlib47_string.h
+ * @brief The header that contains string.h equivalent functions
  * Includes both str47 based functions and char* based ones (LEGACY VERSION)
 */
 

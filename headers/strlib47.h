@@ -6,8 +6,9 @@
 #include <stdint.h>
 
 /**
- @file The main header file for strlib47.h
- @author Francisco Correia, also known as Ninja47 (by no one)
+ * @file strlib47.h
+ * @brief The main header file for strlib47
+ * @author Francisco Correia, also known as Ninja47 (by no one)
 */
 
 /**

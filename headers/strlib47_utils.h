@@ -3,7 +3,8 @@
 #include "strlib47.h"
 
 /**
- * @file The header that contains custom utilities
+ * @file strlib47_utils.h
+ * @brief The header that contains custom utilities
  */
 
 str47 strlib47_create(const char* string);
