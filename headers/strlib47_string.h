@@ -1,6 +1,7 @@
 #ifndef STRLIB47_STRING_H
 #define STRLIB47_STRING_H
-#include "strlib47.h"
+#include <stdint.h>
+#include "strlib47_types.h"
 
 /**
  * @file The header that contains string.h equivalent functions

@@ -1,9 +1,19 @@
-#ifndef STRLIB47_MACROS_H
-#define STRLIB47_MACROS_H
+#ifndef STRLIB47_TYPES_H
+#define STRLIB47_TYPES_H
+#include <stdint.h>
 
 /**
- * @file The header that contains all macros used accross the library
+ * @file The header that contains all types used in the library
+ * Includes macros, enums, structs and more
  */
+
+/**
+ * @brief The oficial strlib47 string type
+*/
+typedef struct str47{
+    char* str;
+    uint64_t len; //=strlib47L_strlen(str);
+}str47;
 
 /**
  * @brief Hex char limits - upper case minimum
