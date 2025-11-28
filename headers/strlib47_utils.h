@@ -6,6 +6,6 @@
  * @file The header that contains custom utilities
  */
 
-str47 strlib47_create(const char* string);
+str47 strlib47_create(char* string);
 
 #endif

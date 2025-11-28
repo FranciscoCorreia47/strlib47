@@ -12,7 +12,7 @@
 */
 typedef struct str47{
     char* str;
-    uint64_t len; //=strlib47L_strlen(str);
+    uint64_t len;
 }str47;
 
 /**
