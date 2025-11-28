@@ -9,7 +9,7 @@ uint8_t strlib47_strcpy(const str47* src, str47* dest){
   return 0;
 }
 
-uint8_t strlib47L_strcpy(const str47* src, str47* dest){
+uint8_t strlib47L_strcpy(const char* src, char* dest){
   
   uint64_t dest_len = strlib47L_strlen(dest);
 

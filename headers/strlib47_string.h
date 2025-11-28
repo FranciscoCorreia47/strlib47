@@ -43,7 +43,7 @@ uint8_t strlib47_strcpy(const str47* src, str47* dest);
  * @brief LEGACY VERSION: Copy the contents of src to dest
  * @return Error Flag or 0
 */
-uint8_t strlib47L_strcpy(const str47* src, str47* dest);
+uint8_t strlib47L_strcpy(const char* src, char* dest);
 
 /**
  * @brief Concatenate str1 to the end of str2, starting on str1's \0
