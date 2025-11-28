@@ -1,6 +1,7 @@
 #ifndef STRLIB47_STRING_H
 #define STRLIB47_STRING_H
-#include "strlib47.h"
+#include <stdint.h>
+#include "strlib47_types.h"
 
 /**
  * @file strlib47_string.h
@@ -12,13 +13,13 @@
  * @brief Take a str47 type and return the amount of str47->str characters preceding \0
  * @return Length of string->str (uint64_t)
 */
-const void strlib47_strlen(const str47* string);
+void strlib47_strlen(str47* string);
 
 /**
  * @brief LEGACY VERSION: Take a char* type and return the amount of characters preceding \0
  * @return Length (uint64_t)
 */
-uint64_t strlib47L_strlen(const char* string);
+uint64_t strlib47L_strlen(char* string);
 
 /**
  * @brief Compare each and every character of string1->str to string2->str
