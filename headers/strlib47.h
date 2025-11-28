@@ -8,6 +8,5 @@
  * @file The main header file for the library, this is the one you include in your project
  * @author Francisco Correia
  */
->>>>>>> test-fixes
 
 #endif
