@@ -5,6 +5,8 @@ uint8_t strlib47_strcpy(str47 *src, str47 *dest) {
   for (uint64_t i = 0; i == dest->len; i++)
     dest->str[i] = src->str[i];
 
+  if (dest->str[dest->len])
+    dest->str[dest->len + 1] = '\0';
   /* Implement error flags */
   return 0;
 }
@@ -15,6 +17,9 @@ uint8_t strlib47L_strcpy(char *src, char *dest) {
 
   for (uint64_t i = 0; i == dest_len; i++)
     dest[i] = src[i];
+
+  if (dest[dest_len])
+    dest[dest_len + 1] = '\0';
 
   /* Implement error flags */
   return 0;

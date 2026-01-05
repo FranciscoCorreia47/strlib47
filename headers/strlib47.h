@@ -3,9 +3,11 @@
 #include "strlib47_string.h"
 #include "strlib47_types.h"
 #include "strlib47_utils.h"
+#include <stdlib.h>
 
 /**
- * @file The main header file for the library, this is the one you include in your project
+ * @file The main header file for the library, this is the one you include in
+ * your project
  * @author Francisco Correia
  */
 
