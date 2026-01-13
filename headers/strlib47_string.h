@@ -52,7 +52,7 @@ uint8_t strlib47L_strcpy(char *src, char *dest);
  * @return New str47 type with str47->str=str1+str2 and
  * str47->len=strlib47_strlen(*str47)
  */
-str47 *strlib47_strcat(str47 str1, str47 str2);
+str47 strlib47_strcat(str47 str1, str47 str2);
 
 /**
  * @brief LEGACY VERSION: Concatenate str1 to the end of str2, starting on
