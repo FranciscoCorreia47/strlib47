@@ -1,26 +1,33 @@
 #include "../headers/strlib47.h"
 
-uint8_t strlib47_strcpy(str47 *src, str47 *dest) {
+uint8_t strlib47_strcpy(const str47 *src, str47 *dest) {
+  if (!src || !dest || !src->str)
+    return 1; // Why no pointers bruv
 
-  for (uint64_t i = 0; i == dest->len; i++)
+  char *tmp = reallocarray(dest->str, src->len + 1, sizeof(char));
+  if (!tmp)
+    return 2; // Why no memory bruv
+
+  dest->str = tmp;
+  dest->len = src->len;
+
+  for (uint64_t i = 0; i < src->len; ++i)
     dest->str[i] = src->str[i];
 
-  if (dest->str[dest->len])
-    dest->str[dest->len + 1] = '\0';
-  /* Implement error flags */
-  return 0;
+  dest->str[dest->len] = '\0';
+  return 0; // Thanks for cooperating
 }
 
-uint8_t strlib47L_strcpy(char *src, char *dest) {
+uint8_t strlib47L_strcpy(const char *src, char *dest) {
+  if (!src || !dest)
+    return 1; // Why no pointers bruv
 
-  uint64_t dest_len = strlib47L_strlen(dest);
-
-  for (uint64_t i = 0; i == dest_len; i++)
+  uint64_t i = 0;
+  while (src[i]) {
     dest[i] = src[i];
+    ++i;
+  }
 
-  if (dest[dest_len])
-    dest[dest_len + 1] = '\0';
-
-  /* Implement error flags */
-  return 0;
+  dest[i] = '\0';
+  return 0; // Thanks for cooperating
 }
