@@ -16,11 +16,20 @@
 str47 strlib47_create(char *string);
 
 /**
- * @brief Search a text for a sequence of characters
+ * @brief Search a text for a sequence of characters and return the index
  * @param trgt the sequence to search
  * @param search the string to search on
  * @return the index of trgt in search or -1 if not found
  */
 int64_t strlib47_indexOf(char *trgt, char *search);
+
+/**
+ * @brief Replace all the ocurrences of a substring in a text for a given string
+ * @param trgt the substring that will be replaced
+ * @param repl the replacement for trgt
+ * @param src the text where substring is contained
+ * @return 1 on success, 0 on failure
+ */
+uint8_t strlib47_replace(char *trgt, char *repl, char *src);
 
 #endif
