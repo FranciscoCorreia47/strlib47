@@ -15,7 +15,7 @@ uint8_t strlib47_strcpy(const str47 *src, str47 *dest) {
     dest->str[i] = src->str[i];
 
   dest->str[dest->len] = '\0';
-  return 0; // Thanks for cooperating
+  return 0;
 }
 
 uint8_t strlib47L_strcpy(const char *src, char *dest) {
@@ -29,5 +29,5 @@ uint8_t strlib47L_strcpy(const char *src, char *dest) {
   }
 
   dest[i] = '\0';
-  return 0; // Thanks for cooperating
+  return 0;
 }

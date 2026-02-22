@@ -15,9 +15,9 @@ str47 strlib47_replace(char *trgt, char *repl, char *src) {
   // Copy that slice to ret
   strlib47L_strcpy(src, ret.str);
   // Concatenate the replacement
-  ret.str = strlib47L_strcat(repl, ret.str);
+  ret.str = strlib47L_strcat(ret.str, repl);
   // Concatenate the remainder of the string after the target
-  ret.str = strlib47L_strcat(src + exists + t_len - 1, ret.str);
+  ret.str = strlib47L_strcat(ret.str, src + exists + t_len);
 
   return ret;
 }
