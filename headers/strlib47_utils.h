@@ -30,6 +30,6 @@ int64_t strlib47_indexOf(char *trgt, char *search);
  * @param src the text where substring is contained
  * @return 1 on success, 0 on failure
  */
-uint8_t strlib47_replace(char *trgt, char *repl, char *src);
+str47 strlib47_replace(char *trgt, char *repl, char *src);
 
 #endif
