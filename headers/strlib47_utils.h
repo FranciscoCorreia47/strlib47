@@ -32,4 +32,12 @@ int64_t strlib47_indexOf(char *trgt, char *search);
  */
 str47 strlib47_replace(char *trgt, char *repl, char *src);
 
+/**
+ * @brief Returns a slice of the src starting on lwr and ending in upr
+ * @lwr The starting position in src.str inclusive
+ * @upr The ending position in src.str exclusive
+ * @return str47
+ */
+str47 strlib47_slice(uint64_t lwr, uint64_t upr, str47 src);
+
 #endif
