@@ -40,4 +40,20 @@ str47 strlib47_replace(char *trgt, char *repl, char *src);
  */
 str47 strlib47_slice(uint64_t lwr, uint64_t upr, str47 src);
 
+/**
+ * @brief Removes preceding and trailing empty spaces, tabs or newline
+ * characters
+ */
+void strlib47_trim(str47 *src);
+
+/**
+ * @brief Checks if the character is a space character
+ */
+uint8_t strlib47_isspace(char c);
+
+/**
+ * @brief Checks if the character is alphanumeric
+ * Means any letter a-z A-Z or number 0-9
+ */
+uint8_t strlib47_isalnum(char c);
 #endif
