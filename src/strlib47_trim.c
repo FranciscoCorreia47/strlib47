@@ -2,7 +2,7 @@
 
 void strlib47_trim(str47 *src) {
   uint8_t l = 0, r = 0;
-  for (uint8_t i = 0; i < src->len; ++i) {
+  for (uint64_t i = 0; i < src->len; ++i) {
     if (!l && strlib47_isspace(src->str[i])) {
       strlib47L_strcpy(&src->str[i + 1], src->str);
       src->len--;
@@ -14,6 +14,9 @@ void strlib47_trim(str47 *src) {
       src->len--;
     } else {
       r = 1;
+    }
+    if (!l || !r) {
+      i--;
     }
   }
 }
