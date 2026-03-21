@@ -1,20 +1,19 @@
 #include "../headers/strlib47.h"
 
-// Max: LWR_ASCII_CHAR_MAX
-// Min: 0x21
 void strlib47_trim(str47 *src) {
-  char bak;
-  for (uint64_t i = 0; i < src->len; ++i) {
-    if (!i) {
-      if (strlib47_isspace(src->str[0]) && strlib47_isalnum(src->str[1]))
-        strlib47L_strcpy(&src->str[1], src->str);
+  uint8_t l = 0, r = 0;
+  for (uint8_t i = 0; i < src->len; ++i) {
+    if (!l && strlib47_isspace(src->str[i])) {
+      strlib47L_strcpy(&src->str[i + 1], src->str);
+      src->len--;
     } else {
-      if (i + 1 != src->len) {
-        if (strlib47_isspace(src->str[i]) &&
-            strlib47_isalnum(src->str[i + 1]) &&
-            strlib47_isalnum(src->str[i - 1]))
-          strlib47L_strcpy(&src->str[i + 1], &src->str[i]);
-      }
+      l = 1;
+    }
+    if (!r && strlib47_isspace(src->str[src->len - i - 1])) {
+      src->str[src->len - i - 1] = '\0';
+      src->len--;
+    } else {
+      r = 1;
     }
   }
 }
