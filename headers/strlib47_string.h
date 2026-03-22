@@ -73,4 +73,15 @@ char strlib47_toupper(char ch);
  */
 char strlib47_tolower(char ch);
 
+/**
+ * @brief Delimits a string to the next occourrence of a token
+ * NOTE: This is an implementation of strtok_r, not strtok
+ * @param src is the str47* to delimit
+ * Both src->str and src->len will be updated
+ * @param tok is the delimiting token
+ * @param saveptr is the pointer that stores the length of the full src->str
+ * The caller is responsible for freeing (for now)
+ */
+void strlib47_strtok(str47 *src, char *tok, uint64_t *saveptr);
+
 #endif
