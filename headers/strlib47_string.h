@@ -81,6 +81,7 @@ char strlib47_tolower(char ch);
  * @param tok is the delimiting token
  * @param saveptr is the pointer that stores the length of the full src->str
  * The caller is responsible for freeing (for now)
+ * In the first call, saveptr should be -2 by the caller
  */
 void strlib47_strtok(str47 *src, char *tok, int64_t *saveptr);
 

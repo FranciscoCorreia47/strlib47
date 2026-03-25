@@ -12,7 +12,9 @@ void strlib47_strtok(str47 *src, char *tok, int64_t *saveptr) {
       if (src->len == 1)
         return; // If the string is only the token, do nothing, saveptr will be
                 // -1
-      *src = strlib47_create(&src->str[1]);
+      *src = strlib47_create(
+          &src->str[1]); // Strip from the right, to eliminate the token at 0
+                         // and allow future calls to work
     } else {
       *saveptr = idx1;
     }
@@ -28,5 +30,3 @@ void strlib47_strtok(str47 *src, char *tok, int64_t *saveptr) {
   src->str[*saveptr] = '\0';
   src->len = *saveptr;
 }
-
-// ,hello,world
