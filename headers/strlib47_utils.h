@@ -47,6 +47,14 @@ str47 strlib47_slice(uint64_t lwr, uint64_t upr, str47 src);
 void strlib47_trim(str47 *src);
 
 /**
+ * @brief Splits a string into an array of 'words', based on a token
+ * @param tok The token that delimits each 'word', if NULL, the default value of
+ * " " will be used
+ * @return An array of str47s, where .str in each will be a 'word'
+ */
+str47 *strlib47_split(str47 src, char *tok);
+
+/**
  * @brief Checks if the character is a space character
  */
 uint8_t strlib47_isspace(char c);
