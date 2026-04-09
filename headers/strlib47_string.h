@@ -82,7 +82,8 @@ char strlib47_tolower(char ch);
  * @param saveptr is the pointer that stores the length of the full src->str
  * The caller is responsible for freeing (for now)
  * In the first call, saveptr should be -2 by the caller
+ * @return str47 containing the tokenized string
  */
-void strlib47_strtok(str47 *src, char *tok, int64_t *saveptr);
+str47 strlib47_strtok(str47 *src, char *tok, int64_t *saveptr);
 
 #endif
