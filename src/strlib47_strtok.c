@@ -2,12 +2,12 @@
 
 str47 strlib47_strtok(str47 *src, char *tok, int64_t *saveptr) {
   int64_t idx1 = strlib47_indexOf(tok, src->str);
-  int64_t idx2 = strlib47_indexOf(tok, &src->str[*saveptr + 1]);
-  str47 ret = strlib47_create("/0");
+  str47 ret = strlib47_create("\0");
+  int64_t pos = *saveptr == -2 ? 0 : *saveptr + 1;
 
   // When it's the first call, *saveptr is -2
-  // First call and idx is 0, skip to the next token
   if (*saveptr == -2) {
+    // First call and idx is 0, skip to the next token
     if (!idx1) {
       *saveptr = strlib47_indexOf(tok, &src->str[1]);
       if (src->len == 1) {
@@ -21,6 +21,7 @@ str47 strlib47_strtok(str47 *src, char *tok, int64_t *saveptr) {
       *saveptr = idx1;
     }
   } else {
+    int64_t idx2 = strlib47_indexOf(tok, &src->str[*saveptr + 1]);
     if (idx2 != -1)
       *saveptr += idx2 + 1;
     else
@@ -29,6 +30,6 @@ str47 strlib47_strtok(str47 *src, char *tok, int64_t *saveptr) {
 
   if (*saveptr == -1)
     return ret;
-  ret = strlib47_slice(0, *saveptr, *src);
+  ret = strlib47_slice(pos, *saveptr, *src);
   return ret;
 }
