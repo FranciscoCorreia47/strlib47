@@ -8,5 +8,11 @@ str47 *strlib47_split(str47 src, char *tok) {
     strlib47_strtok(&src, tok, &saveptr);
   str47 *w_arr = calloc(w_count, sizeof(str47));
 
+  // Reset saveptr
+  saveptr = -2;
+
+  for (uint64_t i = 0; saveptr != -1; ++i)
+    w_arr[i] = strlib47_strtok(&src, tok, &saveptr);
+
   return w_arr;
 }
