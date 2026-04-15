@@ -47,6 +47,13 @@ str47 strlib47_slice(uint64_t lwr, uint64_t upr, str47 src);
 void strlib47_trim(str47 *src);
 
 /**
+ * @brief Joins an str47 array into a singular str47, concatenating all .str
+ * together
+ * @param sep the separator to add in between the .str
+ */
+str47 strlib47_join(str47 *src, char *sep);
+
+/**
  * @brief Checks if the character is a space character
  */
 uint8_t strlib47_isspace(char c);
@@ -56,4 +63,5 @@ uint8_t strlib47_isspace(char c);
  * Means any letter a-z A-Z or number 0-9
  */
 uint8_t strlib47_isalnum(char c);
+
 #endif
