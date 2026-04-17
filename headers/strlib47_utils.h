@@ -51,7 +51,19 @@ void strlib47_trim(str47 *src);
  * together
  * @param sep the separator to add in between the .str
  */
-str47 strlib47_join(str47 *src, char *sep);
+str47 strlib47_join(str47_arr *src, char *sep);
+
+/**
+ * @brief Initializes an str47 array with @count elements
+ * Heap allocated
+ */
+str47_arr strlib47_init(uint64_t count);
+
+/**
+ * @brief Appends an str47 to the end of the str47_arr
+ * Stores a copy and frees the original
+ */
+void strlib47_append(str47 *src, str47_arr *arr);
 
 /**
  * @brief Checks if the character is a space character
