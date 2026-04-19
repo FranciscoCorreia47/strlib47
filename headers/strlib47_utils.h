@@ -55,6 +55,25 @@ void strlib47_trim(str47 *src);
 str47 *strlib47_split(str47 src, char *tok);
 
 /**
+ * @brief Joins an str47 array into a singular str47, concatenating all .str
+ * together
+ * @param sep the separator to add in between the .str
+ */
+str47 strlib47_join(str47_arr *src, char *sep);
+
+/**
+ * @brief Initializes an str47 array with @count elements
+ * Heap allocated
+ */
+str47_arr strlib47_init(uint64_t count);
+
+/**
+ * @brief Appends an str47 to the end of the str47_arr
+ * Stores a copy and frees the original
+ */
+void strlib47_append(str47 *src, str47_arr *arr);
+
+/**
  * @brief Checks if the character is a space character
  */
 uint8_t strlib47_isspace(char c);
@@ -64,4 +83,5 @@ uint8_t strlib47_isspace(char c);
  * Means any letter a-z A-Z or number 0-9
  */
 uint8_t strlib47_isalnum(char c);
+
 #endif

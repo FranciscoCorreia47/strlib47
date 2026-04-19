@@ -15,6 +15,11 @@ typedef struct str47 {
   uint64_t len;
 } str47;
 
+typedef struct str47_arr {
+  str47 *data;
+  uint64_t len;
+} str47_arr;
+
 /**
  * @brief Hex char limits - upper case minimum
  * @details This macro defines the minimum hex value a char needs to be greater
