@@ -7,7 +7,7 @@ str47 strlib47_strtok(str47 *src, char *tok, int64_t *saveptr) {
 
   // When it's the first call, *saveptr is -2
   if (*saveptr == -2) {
-    // First call and idx is 0, skip to the next token
+    // First call and token is at 0, skip to the next token
     if (!idx1) {
       *saveptr = strlib47_indexOf(tok, &src->str[1]);
       if (src->len == 1) {
@@ -16,7 +16,7 @@ str47 strlib47_strtok(str47 *src, char *tok, int64_t *saveptr) {
       }
       // Strip from the right, to eliminate the token at 0
       // and allow future calls to work
-      *src = strlib47_create(&src->str[1]);
+      strlib47L_strcpy(&src->str[1], src->str);
     } else {
       *saveptr = idx1;
     }

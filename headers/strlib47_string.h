@@ -5,14 +5,12 @@
 
 /**
  * @file strlib47_string.h
- * @brief The header that contains string.h equivalent functions
+ * @brief The header that contains string.h function reimplementations
  * Includes both str47 based functions and char* based ones (LEGACY VERSION)
  */
 
 /**
- * @brief Take a str47 type and return the amount of str47->str characters
- * preceding \0
- * @return Length of string->str (uint64_t)
+ * @brief Updates the length of an str47
  */
 void strlib47_strlen(str47 *string);
 
@@ -25,13 +23,13 @@ uint64_t strlib47L_strlen(char *string);
 
 /**
  * @brief Compare each and every character of string1->str to string2->str
- * @return 1 if equal; 0 if not equal (uint8_t)
+ * @return 1 if equal; 0 otherwise
  */
 uint8_t strlib47_strcmp(str47 *string1, str47 *string2);
 
 /**
  * @brief LEGACY VERSION: Compare each and every character of string1 to string2
- * @return 1 if equal; 0 if not equal (uint8_t)
+ * @return 1 if equal; 0 otherwise
  */
 uint8_t strlib47L_strcmp(char *string1, char *string2);
 
@@ -45,19 +43,18 @@ uint8_t strlib47_strcpy(const str47 *src, str47 *dest);
  * @brief LEGACY VERSION: Copy the contents of src to dest
  * @return Error Flag or 0
  */
-uint8_t strlib47L_strcpy(const char *src, char *dest);
+uint8_t strlib47L_strcpy(char *src, char *dest);
 
 /**
- * @brief Concatenate str1 to the end of str2, starting on str1's \0
- * @return New str47 type with str47->str=str1+str2 and
- * str47->len=strlib47_strlen(*str47)
+ * @brief Concatenate str2 to the end of str1, starting on str1's \0
+ * @return str47 with the junction of str1 and str2
  */
 str47 strlib47_strcat(str47 *str1, str47 *str2);
 
 /**
- * @brief LEGACY VERSION: Concatenate str1 to the end of str2, starting on
+ * @brief LEGACY VERSION: Concatenate str2 to the end of str1, starting on
  * str1's \0
- * @return A char* that contains the junction of str1 and str2
+ * @return char* with the junction of str1 and str2
  */
 char *strlib47L_strcat(char *str1, char *str2);
 

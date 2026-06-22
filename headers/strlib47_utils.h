@@ -4,7 +4,7 @@
 
 /**
  * @file strlib47_utils.h
- * @brief The header that contains custom utilities
+ * @brief The header that contains custom utility functions
  */
 
 /**
@@ -28,15 +28,13 @@ int64_t strlib47_indexOf(char *trgt, char *search);
  * @param trgt the substring that will be replaced
  * @param repl the replacement for trgt
  * @param src the text where substring is contained
- * @return 1 on success, 0 on failure
  */
-str47 strlib47_replace(char *trgt, char *repl, char *src);
+void strlib47_replace(char *trgt, char *repl, char *src);
 
 /**
  * @brief Returns a slice of the src starting on lwr and ending in upr
- * @lwr The starting position in src.str inclusive
- * @upr The ending position in src.str exclusive
- * @return str47
+ * @param lwr The starting position in src.str inclusive
+ * @param upr The ending position in src.str exclusive
  */
 str47 strlib47_slice(uint64_t lwr, uint64_t upr, str47 src);
 
@@ -52,17 +50,17 @@ void strlib47_trim(str47 *src);
  * " " will be used
  * @return An array of str47s, where .str in each will be a 'word'
  */
-str47 *strlib47_split(str47 src, char *tok);
+str47_arr strlib47_split(str47 src, char *tok);
 
 /**
  * @brief Joins an str47 array into a singular str47, concatenating all .str
  * together
- * @param sep the separator to add in between the .str
+ * @param sep the separator to add in between the strings
  */
 str47 strlib47_join(str47_arr *src, char *sep);
 
 /**
- * @brief Initializes an str47 array with @count elements
+ * @brief Initializes an str47 array with count elements
  * Heap allocated
  */
 str47_arr strlib47_init(uint64_t count);
@@ -75,6 +73,7 @@ void strlib47_append(str47 *src, str47_arr *arr);
 
 /**
  * @brief Checks if the character is a space character
+ * Meaning ' ' \n \r \f \t \v
  */
 uint8_t strlib47_isspace(char c);
 

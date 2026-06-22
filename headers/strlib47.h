@@ -4,9 +4,11 @@
 #include "strlib47_types.h"
 #include "strlib47_utils.h"
 #include <stdlib.h>
+#include <malloc.h>
 
 /**
- * @file The main header file for the library, this is the one you include in
+ * @file strlib47.h
+ * @brief The main header file for the library, this is the one you include in
  * your project
  * @author Francisco Correia
  */

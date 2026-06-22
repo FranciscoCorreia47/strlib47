@@ -2,8 +2,9 @@
 
 str47 strlib47_join(str47_arr *arr, char *sep) {
   str47 ret = strlib47_create("\0");
+  *sep = sep == NULL ? ' ' : *sep; // Default to whitespace separator
 
-  if (!arr || arr->len <= 0 || !sep)
+  if (!arr || arr->len <= 0)
     return ret;
 
   uint64_t sep_len = strlib47L_strlen(sep);

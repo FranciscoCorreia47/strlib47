@@ -3,17 +3,22 @@
 #include <stdint.h>
 
 /**
- * @file The header that contains all types used in the library
- * Includes macros, enums, structs and more
+ * @file strlib47_types.h 
+ * @brief The header that contains all types used in the library
+ * Includes macros and structs
  */
 
 /**
- * @brief The oficial strlib47 string type
+ * @brief The strlib47 string type
  */
 typedef struct str47 {
   char *str;
   uint64_t len;
 } str47;
+
+/**
+ * @brief The strlib47 array type
+ */
 
 typedef struct str47_arr {
   str47 *data;
@@ -32,7 +37,7 @@ typedef struct str47_arr {
  * @details This macro defines the maximum hex value a char needs to be smaller
  * than for it to be an upper case character
  */
-#define UPR_ASCII_CHAR_MAX 0x58
+#define UPR_ASCII_CHAR_MAX 0x5b
 
 /**
  * @brief Hex char limits - lower case minimum
@@ -46,7 +51,7 @@ typedef struct str47_arr {
  * @details This macro defines the maximum hex value a char needs to be smaller
  * than for it to be a lower case character
  */
-#define LWR_ASCII_CHAR_MAX 0x78
+#define LWR_ASCII_CHAR_MAX 0x7b
 
 #define ASCII_NUM_MIN 0x30
 #define ASCII_NUM_MAX 0x39

@@ -1,23 +1,33 @@
 #include "../headers/strlib47.h"
 
-str47 strlib47_replace(char *trgt, char *repl, char *src) {
+void strlib47_replace(char *trgt, char *repl, char *src) {
 
-  str47 ret = strlib47_create("0");
   int64_t exists = strlib47_indexOf(trgt, src);
 
   if (!trgt || !repl || !src || exists == -1)
-    return ret;
+    return;
 
   uint64_t t_len = strlib47L_strlen(trgt);
 
-  // Cut src so it stops before the first ocurrence of trgt
   src[exists] = '\0';
-  // Copy that slice to ret
-  strlib47L_strcpy(src, ret.str);
-  // Concatenate the replacement
+  str47 ret = strlib47_create(src);
   ret.str = strlib47L_strcat(ret.str, repl);
-  // Concatenate the remainder of the string after the target
   ret.str = strlib47L_strcat(ret.str, src + exists + t_len);
+  strlib47L_strcpy(ret.str, src);
+  exists = strlib47_indexOf(trgt, src);
 
-  return ret;
+  while (exists != -1){
+    // Cut src so it stops before the first ocurrence of trgt
+    src[exists] = '\0';
+    // Copy that slice to ret
+    strlib47L_strcpy(src, ret.str);
+    // Concatenate the replacement
+    ret.str = strlib47L_strcat(ret.str, repl);
+    // Concatenate the remainder of the string after the target
+    ret.str = strlib47L_strcat(ret.str, src + exists + t_len);
+
+    strlib47L_strcpy(ret.str, src);
+
+    exists = strlib47_indexOf(trgt, src);
+  }
 }
