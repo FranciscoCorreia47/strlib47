@@ -2,6 +2,12 @@
 
 str47 strlib47_create(char *string) {
   str47 created;
+  
+  if (!string) {
+    created.str = "\0";
+    created.len = 0;
+    return created;
+  }
 
   created.len = strlib47L_strlen(string);
 
@@ -9,11 +15,6 @@ str47 strlib47_create(char *string) {
 
   strlib47L_strcpy(string, created.str);
 
-  if (!created.str || !created.len) {
-    created.str = "\0";
-    created.len = 0;
-    return created;
-  }
 
   return created;
 }
