@@ -39,6 +39,13 @@ void strlib47_replace(char *trgt, char *repl, char *src);
 str47 strlib47_slice(uint64_t lwr, uint64_t upr, str47 src);
 
 /**
+ * @brief LEGACY VERSION: Returns a slice of the src starting on lwr and ending in upr
+ * @param lwr The starting position in src inclusive
+ * @param upr The ending position in src exclusive
+ */
+char* strlib47L_slice(uint64_t lwr, uint64_t upr, char *src);
+
+/**
  * @brief Removes preceding and trailing empty spaces, tabs or newline
  * characters
  */
