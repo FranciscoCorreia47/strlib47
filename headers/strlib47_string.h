@@ -56,7 +56,7 @@ str47 strlib47_strcat(str47 *str1, str47 *str2);
  * str1's \0
  * @return char* with the junction of str1 and str2
  */
-char *strlib47L_strcat(char *str1, char *str2);
+char* strlib47L_strcat(char *str1, char *str2);
 
 /**
  * @brief Transform ch to upper case if ch is a character
@@ -69,6 +69,19 @@ char strlib47_toupper(char ch);
  * @return Letter in lower case (char)
  */
 char strlib47_tolower(char ch);
+
+/**
+ * @brief LEGCAY VERSION: Delimits a string to the next occourrence of a token
+ * NOTE: This is an implementation of strtok_r, not strtok
+ * @param src is the char* to delimit
+ * src will be updated
+ * @param tok is the delimiting token
+ * @param saveptr is the pointer that stores the length of the full src->str
+ * The caller is responsible for freeing (for now)
+ * In the first call, saveptr should be -2 by the caller
+ * @return char* containing the tokenized string
+ */
+char* strlib47L_strtok(char *src, char *tok, int64_t *saveptr);
 
 /**
  * @brief Delimits a string to the next occourrence of a token
