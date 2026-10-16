@@ -29,7 +29,7 @@ int64_t strlib47_indexOf(char *trgt, char *search);
  * @param repl the replacement for trgt
  * @param src the text where substring is contained
  */
-void strlib47_replace(char *trgt, char *repl, char *src);
+void strlib47_replace(char *trgt, char *repl, str47 *src);
 
 /**
  * @brief Returns a slice of the src starting on lwr and ending in upr
@@ -50,6 +50,22 @@ char* strlib47L_slice(uint64_t lwr, uint64_t upr, char *src);
  * characters
  */
 void strlib47_trim(str47 *src);
+
+/**
+ * @brief Checks if an str47 begins with a specific substring
+ * @param src the str47 to search in
+ * @param sub the substring to search
+ * @return 1 or 0 (True or False)
+*/
+uint8_t strlib47_startsWith(str47 src, str47 sub);
+
+/**
+ * @brief Checks if an str47 ends with a specific substring
+ * @param src the str47 to search in
+ * @param sub the substring to search
+ * @return 1 or 0 (True or False)
+*/
+uint8_t strlib47_endsWith(str47 src, str47 sub);
 
 /**
  * @brief Splits a string into an array of 'words', based on a token
