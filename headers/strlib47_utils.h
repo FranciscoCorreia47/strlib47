@@ -106,4 +106,11 @@ uint8_t strlib47_isspace(char c);
  */
 uint8_t strlib47_isalnum(char c);
 
+
+/**
+ * @brief Checks if a character is punctuation
+ * Punctuation characters are ! " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ ] { }
+ */
+uint8_t strlib47_ispunctuation(char c);
+
 #endif
