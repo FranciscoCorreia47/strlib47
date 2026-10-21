@@ -53,6 +53,7 @@ void strlib47_trim(str47 *src);
 
 /**
  * @brief Checks if an str47 begins with a specific substring
+ * NOTE: The function is case sensitive
  * @param src the str47 to search in
  * @param sub the substring to search
  * @return 1 or 0 (True or False)
@@ -61,6 +62,7 @@ uint8_t strlib47_startsWith(str47 src, str47 sub);
 
 /**
  * @brief Checks if an str47 ends with a specific substring
+ * NOTE: The function is case sensitive
  * @param src the str47 to search in
  * @param sub the substring to search
  * @return 1 or 0 (True or False)
